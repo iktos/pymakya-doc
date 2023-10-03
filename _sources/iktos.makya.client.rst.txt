@@ -1,0 +1,56 @@
+iktos.makya.client package
+==========================
+
+Client module
+---------------------------------
+
+.. automodule:: iktos.makya.client.client
+   :members:
+   :show-inheritance:
+
+Dataset module
+---------------------------------
+
+.. automodule:: iktos.makya.client.dataset
+   :members:
+   :exclude-members: MakyaTarget, MakyaMoleculesDataFrame
+   :show-inheritance:
+
+Generator module
+-----------------------------------
+
+.. automodule:: iktos.makya.client.generator
+   :members:
+   :exclude-members: update_configuration, validate_generator_reinvent_component_type_name
+   :show-inheritance:
+
+Post-processor (Scorer) module
+-----------------------------------
+
+.. automodule:: iktos.makya.client.post_processor
+   :members:
+   :exclude-members: 
+   :show-inheritance:
+
+Predictor Set (AutoML) module
+----------------------------------------
+
+.. automodule:: iktos.makya.client.predictor_set
+   :members:
+   :exclude-members: MakyaPredictor
+   :show-inheritance:
+
+Project module
+---------------------------------
+
+.. automodule:: iktos.makya.client.project
+   :members:
+   :show-inheritance:
+
+API Scorer module
+--------------------------------
+
+.. automodule:: iktos.makya.client.scorer
+   :members:
+   :show-inheritance:
+        

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iktos.makya.client.generator_configuration.fragment_growing_generator_configuration &mdash; pyMakya client 1.11.4 documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html">
+            
+          </a>
+              <div class="version">
+                Tag (1.11.4)
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../iktos.makya.client.html">iktos.makya.client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.client">Client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.dataset">Dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.generator">Generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.post_processor">Post-processor (Scorer) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.predictor_set">Predictor Set (AutoML) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.project">Project module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.html#module-iktos.makya.client.scorer">API Scorer module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html">iktos.makya.client.generator_configuration package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.generator_configuration">generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.finetuning_generator_configuration">finetuning_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration">fragment_growing_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration">fragment_linking_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.novelty_generator_configuration">novelty_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.filters">filters module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">pyMakya client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">iktos.makya.client.generator_configuration.fragment_growing_generator_configuration</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for iktos.makya.client.generator_configuration.fragment_growing_generator_configuration</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration.filters</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CompoundFilter</span><span class="p">,</span>
+    <span class="n">ExitVectorsParams</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration.generator_configuration</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">GeneratorConfiguration</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="FragmentGrowingGeneratorConfiguration"><a class="viewcode-back" href="../../../../../iktos.makya.client.generator_configuration.html#iktos.makya.client.generator_configuration.fragment_growing_generator_configuration.FragmentGrowingGeneratorConfiguration">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">FragmentGrowingGeneratorConfiguration</span><span class="p">(</span><span class="n">GeneratorConfiguration</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configuration class for a Fragment Growing generator. Needed to create a generator.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reference_molecule_smiles: SMILES of the fragment from which molecules are grown.</span>
+<span class="sd">        exit_vector_params: Fragment exit vectors. Can be 1 or 2.</span>
+<span class="sd">            To compute possible exit vectors, use the :py:meth:`~iktos.makya.client.client.MakyaClient.get_possible_exit_vectors` method.</span>
+<span class="sd">            To draw possible exit vectors, use the :py:meth:`~iktos.makya.client.ipython_console.draw_molecule_with_exit_vectors` function.</span>
+<span class="sd">        final_product_filters: Filters on final generated molecules.</span>
+<span class="sd">        boost_search: Activate the boost search option if set to `True`.</span>
+<span class="sd">        generator_type: Set by default. Not user specified</span>
+<span class="sd">        additional_parameters: Additional parameters for generator configuration.</span>
+<span class="sd">        datasets: Datasets to be used as chemical space.</span>
+<span class="sd">            Can be a single molecule.</span>
+<span class="sd">        predictors: Predictors (predictor sets&#39;s objectives) to guide generation.</span>
+<span class="sd">        substructure_constraints: List of substructure constraints on the generated molecules.</span>
+<span class="sd">            Set with the class :py:class:`~iktos.makya.client.generator_configuration.filters.SubstructConstraint`.</span>
+<span class="sd">        external_scorers: List of API configurations to score the generated molecules.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; reference_smiles = &#39;Nc1ncnc2[nH]cnc12&#39;</span>
+
+<span class="sd">        &gt;&gt;&gt; from iktos.makya.client.ipython_console import draw_molecule_with_exit_vectors</span>
+<span class="sd">        &gt;&gt;&gt; from rdkit import Chem</span>
+<span class="sd">        &gt;&gt;&gt; vectors = await client.get_possible_exit_vectors(reference_smiles)</span>
+<span class="sd">        &gt;&gt;&gt; draw_molecule_with_exit_vectors(Chem.MolFromSmiles(reference_smiles), vectors)</span>
+
+<span class="sd">        &gt;&gt;&gt; from iktos.makya.client.generator_configuration import (</span>
+<span class="sd">        ...     FragmentGrowingGeneratorConfiguration,</span>
+<span class="sd">        ...     CompoundFilter,</span>
+<span class="sd">        ...     ExitVectorsParams,</span>
+<span class="sd">        ...     SubstructConstraint</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; commercial_compounds_filters = [</span>
+<span class="sd">        ...     CompoundFilter(filter_name=&#39;MolWt&#39;, min=450, max=600),</span>
+<span class="sd">        ...     CompoundFilter(filter_name=&#39;TPSA&#39;, min=0.33),</span>
+<span class="sd">        ... ]</span>
+<span class="sd">        &gt;&gt;&gt; product_filters = [</span>
+<span class="sd">        ...     CompoundFilter(filter_name=&#39;QED&#39;, min=0.7),</span>
+<span class="sd">        ...     CompoundFilter(filter_name=&#39;NumAromaticRings&#39;, max=3),</span>
+<span class="sd">        ... ]</span>
+<span class="sd">        &gt;&gt;&gt; commercial_compound_substruct_constraints = [</span>
+<span class="sd">        ...     SubstructConstraint(</span>
+<span class="sd">        ...         type=&#39;SUBSTRUCT_MATCH&#39;,</span>
+<span class="sd">        ...         smarts=&#39;*~[#6]~[#6](=O)-[#8][H]&#39;</span>
+<span class="sd">        ...     )</span>
+<span class="sd">        ... ]</span>
+<span class="sd">        &gt;&gt;&gt; exit_vector_1 = ExitVectorsParams(</span>
+<span class="sd">        ...     smiles=reference_smiles,</span>
+<span class="sd">        ...     exit_vector=[0],</span>
+<span class="sd">        ...     commercial_compound_filters=commercial_compounds_filters,</span>
+<span class="sd">        ...     commercial_compound_substruct_constraints=commercial_compound_substruct_constraints</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; configuration = FragmentGrowingGeneratorConfiguration(</span>
+<span class="sd">        ...     reference_molecule_smiles=reference_smiles,</span>
+<span class="sd">        ...     exit_vector_params=[exit_vector_1],</span>
+<span class="sd">        ...     final_product_filters=product_filters</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; generator = await project.create_generator(generator_name=&quot;my-fragment-growing&quot;, configuration=configuration)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">reference_molecule_smiles</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">exit_vector_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ExitVectorsParams</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">final_product_filters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">CompoundFilter</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">boost_search</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">generator_type</span><span class="o">=</span><span class="s2">&quot;forward&quot;</span><span class="p">,</span>
+            <span class="n">additional_parameters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">additional_parameters</span><span class="p">,</span>
+            <span class="n">datasets</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">,</span>
+            <span class="n">predictors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">predictors</span><span class="p">,</span>
+            <span class="n">substructure_constraints</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">substructure_constraints</span><span class="p">,</span>
+            <span class="n">external_scorers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">external_scorers</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;baseSmiles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_molecule_smiles</span>
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;forwardGenerationParameters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_molecule_smiles</span><span class="p">,</span>
+            <span class="s1">&#39;boostSearch&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">boost_search</span><span class="p">,</span>
+            <span class="s1">&#39;exitVectorsParams&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_molecule_smiles</span><span class="p">,</span>
+                    <span class="s1">&#39;exitVector&#39;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">exit_vector</span><span class="p">,</span>
+                    <span class="s1">&#39;commercialCompoundsDefaultFilters&#39;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="nb">filter</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="n">param</span><span class="o">.</span><span class="n">commercial_compound_filters</span>
+                    <span class="p">]</span>
+                    <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">commercial_compound_filters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                    <span class="k">else</span> <span class="p">[],</span>
+                    <span class="s1">&#39;commercialCompoundsSubstructConstraints&#39;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">constraint</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+                        <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="n">param</span><span class="o">.</span><span class="n">commercial_compound_substruct_constraints</span>
+                    <span class="p">]</span>
+                    <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">commercial_compound_substruct_constraints</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                    <span class="k">else</span> <span class="p">[],</span>
+                    <span class="s1">&#39;maxBatchSize&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit_vector_params</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;productMolsFilters&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="nb">filter</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">final_product_filters</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">final_product_filters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="p">[],</span>
+            <span class="c1"># &#39;synpleChem&#39;: True,</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

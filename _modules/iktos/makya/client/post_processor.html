@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iktos.makya.client.post_processor &mdash; pyMakya client 1.11.4 documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+          </a>
+              <div class="version">
+                Tag (1.11.4)
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iktos.makya.client.html">iktos.makya.client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.client">Client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.dataset">Dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.generator">Generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.post_processor">Post-processor (Scorer) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.predictor_set">Predictor Set (AutoML) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.project">Project module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.scorer">API Scorer module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html">iktos.makya.client.generator_configuration package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.generator_configuration">generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.finetuning_generator_configuration">finetuning_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration">fragment_growing_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration">fragment_linking_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.novelty_generator_configuration">novelty_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.filters">filters module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyMakya client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">iktos.makya.client.post_processor</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for iktos.makya.client.post_processor</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Copyright (C) Iktos - All Rights Reserved</span>
+<span class="sd">Unauthorized copying of this file, via any medium is strictly prohibited</span>
+<span class="sd">Proprietary and confidential</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">iktos.makya.client.dataset</span> <span class="kn">import</span> <span class="n">MakyaDataset</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration.post_processor_score</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PostProcessorScore</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="MakyaPostProcessor"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.post_processor.MakyaPostProcessor">[docs]</a><span class="k">class</span> <span class="nc">MakyaPostProcessor</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class represents the post processor scores found in Makya</span>
+<span class="sd">    Such a scorer can be used to aggregate multiple API, automl or descriptor targets and build a scoring function.</span>
+<span class="sd">    The scoring function can then be used with generators to score generated molecules</span>
+<span class="sd">    without impacting the reward function of the generation itself (hence the post processing part).</span>
+<span class="sd">    They can also be used adhoc to compute scores for a dataset of molecules.</span>
+
+<span class="sd">    Be aware that the scoring itself occurs in the background. So when you submit a dataset to score or run a generation</span>
+<span class="sd">    the scores may take some time to be registered in you data, so you might need to refresh the resulting dataset a few times</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client: Makya client. Not user specified</span>
+<span class="sd">        project: Makya project. Not user specified</span>
+<span class="sd">        graphql_id: GraphQL ID. Set by default. Not user specified</span>
+<span class="sd">        name: Name of the Makya post-processor</span>
+<span class="sd">        slug: GraphQL slug. Not user specified</span>
+<span class="sd">        scores: List of scores that are aggregated in the scorer</span>
+<span class="sd">        created_at: Creation date of the predictor set. Not user specified</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; from iktos.makya.client.post_processor_configuration import (</span>
+<span class="sd">        ...     PostProcessorApiScore,</span>
+<span class="sd">        ...     PostProcessorAutoMLScore,</span>
+<span class="sd">        ...     PostProcessorDescriptorScore</span>
+<span class="sd">        ... )</span>
+
+<span class="sd">        &gt;&gt;&gt; # Print supported descriptors from RDKit</span>
+<span class="sd">        &gt;&gt;&gt; from iktos.makya.client.post_processor_configuration import valid_descriptor_names</span>
+<span class="sd">        &gt;&gt;&gt; valid_descriptor_names</span>
+
+<span class="sd">        &gt;&gt;&gt; # RDKit descriptor</span>
+<span class="sd">        &gt;&gt;&gt; score1 = PostProcessorDescriptorScore(descriptor=&quot;NumRings&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # API Scorer</span>
+<span class="sd">        &gt;&gt;&gt; external_scorers = await project.get_scorers()</span>
+<span class="sd">        &gt;&gt;&gt; score2 = PostProcessorApiScore(scorer=external_scorers[&#39;my API scorer&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; # AutoML predictor</span>
+<span class="sd">        &gt;&gt;&gt; predictor_sets = await project.get_predictor_sets()</span>
+<span class="sd">        &gt;&gt;&gt; predictor_set = predictor_sets[&#39;my predictor set&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; predictors = await predictor_set.get_predictors()</span>
+<span class="sd">        &gt;&gt;&gt; score3 = PostProcessorAutoMLScore(predictor=predictors[&quot;Target1&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; # Creates the post-processing scorer</span>
+<span class="sd">        &gt;&gt;&gt; new_scorer = await project.create_post_processor(</span>
+<span class="sd">        ...     name=&quot;my scorer&quot;,</span>
+<span class="sd">        ...     scores=[</span>
+<span class="sd">        ...         score1,</span>
+<span class="sd">        ...         score2,</span>
+<span class="sd">        ...         score3</span>
+<span class="sd">        ...     ]</span>
+<span class="sd">        ... )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">client</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">project</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">graphql_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">slug</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">scores</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PostProcessorScore</span><span class="p">],</span>
+        <span class="n">created_at</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="n">project</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">graphql_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">slug</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PostProcessorScore</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span> <span class="o">=</span> <span class="n">created_at</span>
+
+<div class="viewcode-block" id="MakyaPostProcessor.get_permalink_url"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.post_processor.MakyaPostProcessor.get_permalink_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_permalink_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The permalink to the post-processing scorer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">get_permalink_url</span><span class="p">()</span><span class="si">}</span><span class="s1">/post-processors/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s1">&#39;</span></div>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;MakyaPostProcessor(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="MakyaPostProcessor.archive"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.post_processor.MakyaPostProcessor.archive">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">archive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Archives the post-processing scorer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">archive_post_processor</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MakyaPostProcessor.restore"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.post_processor.MakyaPostProcessor.restore">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">restore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restores archived post-processing scorer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">restore_post_processor</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MakyaPostProcessor.save"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.post_processor.MakyaPostProcessor.save">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Updates the configuration of a post processing scorer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">update_post_processor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MakyaPostProcessor.score"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.post_processor.MakyaPostProcessor.score">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">:</span> <span class="n">MakyaDataset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Scores a Makya dataset with the post-processing scorer.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dataset: Makya dataset to be scored.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">score_dataset_with_post_processor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

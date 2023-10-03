@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iktos.makya.client package &mdash; pyMakya client 1.11.4 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="iktos.makya.client.generator_configuration package" href="iktos.makya.client.generator_configuration.html" />
+    <link rel="prev" title="Welcome to pyMakya client’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+              <div class="version">
+                Tag (1.11.4)
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">iktos.makya.client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.client">Client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.dataset">Dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator">Generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.post_processor">Post-processor (Scorer) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.predictor_set">Predictor Set (AutoML) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.project">Project module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.scorer">API Scorer module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iktos.makya.client.generator_configuration.html">iktos.makya.client.generator_configuration package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.generator_configuration">generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.finetuning_generator_configuration">finetuning_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration">fragment_growing_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration">fragment_linking_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.novelty_generator_configuration">novelty_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.filters">filters module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyMakya client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">iktos.makya.client package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="iktos-makya-client-package">
+<h1>iktos.makya.client package<a class="headerlink" href="#iktos-makya-client-package" title="Permalink to this headline">¶</a></h1>
+<section id="module-iktos.makya.client.client">
+<span id="client-module"></span><h2>Client module<a class="headerlink" href="#module-iktos.makya.client.client" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.client.MakyaClient">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaClient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aiohttp_session_extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for Makya Clients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – GraphQL endpoint. Deprecated, use base_url instead</p></li>
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Mail address of the user’s Makya account</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Password to the user’s Makya account</p></li>
+<li><p><strong>base_url</strong> – URL to the Makya web client</p></li>
+<li><p><strong>aiohttp_session_extra</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Options to configure the aiohttp module</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya</span> <span class="kn">import</span> <span class="n">MakyaClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.ipython_console</span> <span class="kn">import</span> <span class="n">signon</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">MakyaClient</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">base_url</span><span class="o">=</span><span class="n">makya_url</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">email</span><span class="o">=</span><span class="n">makya_user_email</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">password</span><span class="o">=</span><span class="n">makya_user_password</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">signon</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.archive_post_processor">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">archive_post_processor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.archive_post_processor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.archive_post_processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archives a post processing scorer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Id of the scorer</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Makya’s API response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.create_project">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">create_project</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short_lived</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.create_project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.create_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new project in the Makya client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the new project</p></li>
+<li><p><strong>short_lived</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <cite>False</cite>, the project cannot be deleted from pyMakya</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject">iktos.makya.client.project.MakyaProject</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">new_project</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">create_project</span><span class="p">(</span><span class="s2">&quot;my-new-project&quot;</span><span class="p">,</span> <span class="n">short_lived</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaProject</span></code></a></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>project_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – </p></li>
+<li><p><strong>short_lived</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the client</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.get_possible_exit_vectors">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_possible_exit_vectors</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.get_possible_exit_vectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.get_possible_exit_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the possible exit vectors to a given molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>smiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – SMILES of the molecule</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Optional[List[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>]]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.ipython_console</span> <span class="kn">import</span> <span class="n">draw_molecule_with_exit_vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ref_smiles</span> <span class="o">=</span> <span class="s1">&#39;C1=CN(N=C1)N&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vectors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_possible_exit_vectors</span><span class="p">(</span><span class="n">ref_smiles</span><span class="p">)</span>
+<span class="go">[[5],</span>
+<span class="go">[0],</span>
+<span class="go">[1],</span>
+<span class="go">[4],</span>
+<span class="go">[0, 5],</span>
+<span class="go">[1, 5],</span>
+<span class="go">[4, 5],</span>
+<span class="go">[1, 2, 5],</span>
+<span class="go">[2],</span>
+<span class="go">[3],</span>
+<span class="go">[0, 1],</span>
+<span class="go">[0, 4],</span>
+<span class="go">[1, 4],</span>
+<span class="go">[2, 3],</span>
+<span class="go">[0, 1, 4],</span>
+<span class="go">[1, 2],</span>
+<span class="go">[3, 4],</span>
+<span class="go">[0, 1, 2, 3, 4],</span>
+<span class="go">[0, 1, 5],</span>
+<span class="go">[0, 4, 5],</span>
+<span class="go">[1, 4, 5]]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># To display the possible exit vectors on the molecule:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_molecule_with_exit_vectors</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">ref_smiles</span><span class="p">),</span> <span class="n">vectors</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>smiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.get_projects">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_projects</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.get_projects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.get_projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the projects associated with the Makya client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the projects. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaProject</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.open_in_makya_browser">
+<code class="sig-name descname"><span class="pre">open_in_makya_browser</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.open_in_makya_browser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.open_in_makya_browser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens objects in the browser. The user needs to be signed into Makya in their browser.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]) – Object (Makya project, dataset, predictor set, generator, scorer…) to open in the Makya web client</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">open_in_makya_browser</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">project</span> <span class="o">=</span> <span class="n">projects</span><span class="p">[</span><span class="s1">&#39;my-project&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">open_in_makya_browser</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">datasets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">get_datasets</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;my-dataset&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">open_in_makya_browser</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.restore_post_processor">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">restore_post_processor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.restore_post_processor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.restore_post_processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores an archived post processing scorer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Id of the scorer</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Makya’s API response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.client.MakyaClient.update_post_processor">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">update_post_processor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">post_processor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/client.html#MakyaClient.update_post_processor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.client.MakyaClient.update_post_processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the configuration of a post processing scorer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>post_processor</strong> (<a class="reference internal" href="#iktos.makya.client.post_processor.MakyaPostProcessor" title="iktos.makya.client.post_processor.MakyaPostProcessor"><em>MakyaPostProcessor</em></a>) – The scorer to update</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Makya’s API response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.dataset">
+<span id="dataset-module"></span><h2>Dataset module<a class="headerlink" href="#module-iktos.makya.client.dataset" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.dataset.MakyaDataset">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaDataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphql_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/dataset.html#MakyaDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.dataset.MakyaDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for Makya Datasets. Datasets are created via an asynchronous method of class <a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaProject</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Makya client. Not user specified</p></li>
+<li><p><strong>project</strong> – Associated Makya project</p></li>
+<li><p><strong>graphql_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL ID. Set by default. Not user specified</p></li>
+<li><p><strong>slug</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL slug. Not user specified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the dataset</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;CCC&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;CC&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;CCCCCC&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;CCCCCCC&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;CCCCCCCC&#39;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;Target1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;Target2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">],</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">my_project</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s2">&quot;my-dataset&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="iktos.makya.client.dataset.MakyaDataset.copy">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/dataset.html#MakyaDataset.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.dataset.MakyaDataset.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>copy the dataset to a new name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name to save the new dataset to</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The new dataset informatation</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset">MakyaDataset</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.dataset.MakyaDataset.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/dataset.html#MakyaDataset.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.dataset.MakyaDataset.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the dataset</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.dataset.MakyaDataset.get_targets">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_targets</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/dataset.html#MakyaDataset.get_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.dataset.MakyaDataset.get_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the targets (endpoints) associated with the dataset.
+Targets are columns of the dataset containing numerical values (for example, pIC50, solubility, permeability values etc).
+This method is used when setting up the blueprint for a <a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a> AutoML model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the targets. Format: {<cite>“name”</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaTarget</span></code>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.generator">
+<span id="generator-module"></span><h2>Generator module<a class="headerlink" href="#module-iktos.makya.client.generator" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.generator.MakyaGenerator">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaGenerator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphql_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for Makya Generators. Generators are created via an asynchronous method of class <a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaProject</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Makya client. Not user specified</p></li>
+<li><p><strong>project</strong> – Makya project. Not user specified</p></li>
+<li><p><strong>graphql_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL ID. Set by default. Not user specified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the generator</p></li>
+<li><p><strong>slug</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL slug. Not user specified</p></li>
+<li><p><strong>engine</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaGeneratorEngine</span></code>) – Makya generator engine. Not user specified</p></li>
+<li><p><strong>configuration</strong> (<a class="reference internal" href="iktos.makya.client.generator_configuration.html#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneratorConfiguration</span></code></a>) – Configuration to set up the generator
+The configuration depends on the type of generator. See the <cite>iktos.makya.client.generator_configuration</cite> documentation page.</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Creation date of the generator. Set automatically</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="n">NoveltyGeneratorConfiguration</span><span class="p">,</span> <span class="n">MatchSubstructureConstraint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">goals</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">MatchSubstructureConstraint</span><span class="p">(</span><span class="n">smarts</span><span class="o">=</span><span class="s2">&quot;CC&quot;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="n">NoveltyGeneratorConfiguration</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">reference_molecule_smiles</span><span class="o">=</span><span class="s1">&#39;Nc1ncnc2[nH]cnc12&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">substructure_constraints</span><span class="o">=</span><span class="n">goals</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">additional_parameters</span><span class="o">=</span><span class="p">{}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_generator</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_generator</span><span class="p">(</span><span class="n">generator_name</span><span class="o">=</span><span class="s2">&quot;my-novelty-generator&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">my_generator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.archive">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">archive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.archive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archives the generator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_all_generated_molecules">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_all_generated_molecules</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_all_generated_molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_all_generated_molecules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the molecules generated by the generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>score_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code></a>[‘goal_score’, ‘confidence’, ‘qed’, ‘quality’, ‘similarity’], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]]]) – Dictionary of score filters.
+Only the molecules whose scores are in the specified range will be returned.
+GeneratorScoreFilterName: ‘goal_score’, ‘confidence’, ‘qed’, ‘quality’, ‘similarity’.
+If the user provides a range ([a,b]), the returned molecules’ scores are within this range.
+If the user provides a single value ([a]), the returned molecules’ scores are greater than or equal to this value.</p></li>
+<li><p><strong>max_count</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – Maximum number of molecules to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaMoleculesDataFrame</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a dataframe that contains the generated SMILES and their scores.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># To return molecules with a goal score &gt;= 8:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generated_molecules</span> <span class="o">=</span> <span class="k">await</span> <span class="n">my_generator</span><span class="o">.</span><span class="n">get_all_generated_molecules</span><span class="p">(</span><span class="n">score_filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;goal_score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_cart_molecules">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_cart_molecules</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_cart_molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_cart_molecules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the molecules put in the generator’s cart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>score_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code></a>[‘goal_score’, ‘confidence’, ‘qed’, ‘quality’, ‘similarity’], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]]]) – Dictionary of score filters.
+Only the cart molecules whose scores are in the specified range will be returned.
+GeneratorScoreFilterName: ‘goal_score’, ‘confidence’, ‘qed’, ‘quality’, ‘similarity’.
+If the user provides a range ([a,b]), the returned molecules’ scores are within this range.
+If the user provides a single value ([a]), the returned molecules’ scores are greater than or equal to this value.</p></li>
+<li><p><strong>max_count</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – Maximum number of molecules to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaMoleculesDataFrame</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a dataframe that contains the SMILES and scores of the cart molecules.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cart_molecules</span> <span class="o">=</span> <span class="k">await</span> <span class="n">my_generator</span><span class="o">.</span><span class="n">get_cart_molecules</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_datasets">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_datasets</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the generator’s datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the datasets. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_full_configuration">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_full_configuration</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_full_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_full_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the full configuration of the generator as dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the generator</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_predictor_set">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_predictor_set</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_predictor_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_predictor_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the generator’s predictor set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.get_predictors">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_predictors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.get_predictors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.get_predictors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the generator’s predictors. Predictors are individual objectives of predictor sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictor</span></code>]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a dictionary of the predictors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.push_molecules">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">push_molecules</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.push_molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.push_molecules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes molecules into a generator.
+This method can be useful to visualise external molecules in Makya and compare them with generated molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>molecules</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Generation</span></code>]) – List of Generation objects that associates molecules with scores.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generation.generation</span> <span class="kn">import</span> <span class="n">MakyaMolecule</span><span class="p">,</span> <span class="n">Generation</span><span class="p">,</span> <span class="n">GenerationScore</span><span class="p">,</span> <span class="n">CustomGenerationScore</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit.Chem.QED</span> <span class="kn">import</span> <span class="n">qed</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smiles</span> <span class="o">=</span> <span class="s1">&#39;CCCCC&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">molecule</span> <span class="o">=</span> <span class="n">MakyaMolecule</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">smiles</span><span class="o">=</span><span class="n">smiles</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">inchi</span><span class="o">=</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-Snon -FixedH&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">inchi_key</span><span class="o">=</span><span class="n">Chem</span><span class="o">.</span><span class="n">InchiToInchiKey</span><span class="p">(</span><span class="n">inchi</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">score</span> <span class="o">=</span> <span class="n">GenerationScore</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">qed</span><span class="o">=</span><span class="n">qed</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">confidence</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">custom_scores</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">CustomGenerationScore</span><span class="p">(</span><span class="n">score_name</span><span class="o">=</span><span class="s1">&#39;IC50&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">32</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">CustomGenerationScore</span><span class="p">(</span><span class="n">score_name</span><span class="o">=</span><span class="s1">&#39;Volume&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">270</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generations</span> <span class="o">=</span> <span class="p">[</span><span class="n">Generation</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">molecule</span><span class="o">=</span><span class="n">molecule</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">my_generator</span><span class="o">.</span><span class="n">push_molecules</span><span class="p">(</span><span class="n">generations</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.show_progress">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">show_progress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.show_progress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.show_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the progress of the generation as a progress bar.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.start">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">start</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the generation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.stop">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">stop</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the generation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.generator.MakyaGenerator.unarchive">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">unarchive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator.html#MakyaGenerator.unarchive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator.MakyaGenerator.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the previously archived generator.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.post_processor">
+<span id="post-processor-scorer-module"></span><h2>Post-processor (Scorer) module<a class="headerlink" href="#module-iktos.makya.client.post_processor" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.post_processor.MakyaPostProcessor">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaPostProcessor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphql_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/post_processor.html#MakyaPostProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.post_processor.MakyaPostProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>This class represents the post processor scores found in Makya
+Such a scorer can be used to aggregate multiple API, automl or descriptor targets and build a scoring function.
+The scoring function can then be used with generators to score generated molecules
+without impacting the reward function of the generation itself (hence the post processing part).
+They can also be used adhoc to compute scores for a dataset of molecules.</p>
+<p>Be aware that the scoring itself occurs in the background. So when you submit a dataset to score or run a generation
+the scores may take some time to be registered in you data, so you might need to refresh the resulting dataset a few times</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>) – Makya client. Not user specified</p></li>
+<li><p><strong>project</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>) – Makya project. Not user specified</p></li>
+<li><p><strong>graphql_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL ID. Set by default. Not user specified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the Makya post-processor</p></li>
+<li><p><strong>slug</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL slug. Not user specified</p></li>
+<li><p><strong>scores</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">PostProcessorScore</span></code>]) – List of scores that are aggregated in the scorer</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Creation date of the predictor set. Not user specified</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">PostProcessorApiScore</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">PostProcessorAutoMLScore</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">PostProcessorDescriptorScore</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print supported descriptors from RDKit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration</span> <span class="kn">import</span> <span class="n">valid_descriptor_names</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid_descriptor_names</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># RDKit descriptor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">score1</span> <span class="o">=</span> <span class="n">PostProcessorDescriptorScore</span><span class="p">(</span><span class="n">descriptor</span><span class="o">=</span><span class="s2">&quot;NumRings&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># API Scorer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">external_scorers</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">get_scorers</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">score2</span> <span class="o">=</span> <span class="n">PostProcessorApiScore</span><span class="p">(</span><span class="n">scorer</span><span class="o">=</span><span class="n">external_scorers</span><span class="p">[</span><span class="s1">&#39;my API scorer&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># AutoML predictor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictor_sets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">get_predictor_sets</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictor_set</span> <span class="o">=</span> <span class="n">predictor_sets</span><span class="p">[</span><span class="s1">&#39;my predictor set&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">predictor_set</span><span class="o">.</span><span class="n">get_predictors</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">score3</span> <span class="o">=</span> <span class="n">PostProcessorAutoMLScore</span><span class="p">(</span><span class="n">predictor</span><span class="o">=</span><span class="n">predictors</span><span class="p">[</span><span class="s2">&quot;Target1&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Creates the post-processing scorer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_scorer</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_post_processor</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my scorer&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">scores</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">score1</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">score2</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">score3</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="iktos.makya.client.post_processor.MakyaPostProcessor.archive">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">archive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/post_processor.html#MakyaPostProcessor.archive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.post_processor.MakyaPostProcessor.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archives the post-processing scorer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.post_processor.MakyaPostProcessor.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/post_processor.html#MakyaPostProcessor.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.post_processor.MakyaPostProcessor.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the post-processing scorer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.post_processor.MakyaPostProcessor.restore">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">restore</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/post_processor.html#MakyaPostProcessor.restore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.post_processor.MakyaPostProcessor.restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores archived post-processing scorer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.post_processor.MakyaPostProcessor.save">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">save</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/post_processor.html#MakyaPostProcessor.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.post_processor.MakyaPostProcessor.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the configuration of a post processing scorer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.post_processor.MakyaPostProcessor.score">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">score</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/post_processor.html#MakyaPostProcessor.score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.post_processor.MakyaPostProcessor.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scores a Makya dataset with the post-processing scorer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset</strong> (<a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>) – Makya dataset to be scored.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.predictor_set">
+<span id="predictor-set-automl-module"></span><h2>Predictor Set (AutoML) module<a class="headerlink" href="#module-iktos.makya.client.predictor_set" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaPredictorSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphql_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for Makya AutoML models. Predictor sets are created via an asynchronous method of class <a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaProject</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Makya client. Not user specified</p></li>
+<li><p><strong>project</strong> – Associated Makya project. Not user specified</p></li>
+<li><p><strong>graphql_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL ID. Set by default. Not user specified</p></li>
+<li><p><strong>slug</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL slug. Not user specified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the predictor set</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Creation date of the predictor set. Set automatically</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset_target</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_targets</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictorset_targets</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">target</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_1&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="nb">min</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="nb">max</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">statistics</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">target</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="nb">min</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">statistics</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="nb">max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_predictor_set</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_predictor_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;my-predictor-set&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">predictorset_targets</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">my_predictor_set</span><span class="o">.</span><span class="n">start_learner</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">my_predictor_set</span><span class="o">.</span><span class="n">show_all_metrics</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">my_predictor_set</span><span class="o">.</span><span class="n">archive_learner</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.archive_learner">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">archive_learner</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.archive_learner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.archive_learner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archives the predictor set. Archived models can be retrieved.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.delete">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fully deletes the predictor set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.delete_tested_molecules">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">delete_tested_molecules</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.delete_tested_molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.delete_tested_molecules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the prediction history of a predictor set.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">my_predictor_set</span><span class="o">.</span><span class="n">delete_tested_molecules</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.get_all_predicted_molecules">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_all_predicted_molecules</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.get_all_predicted_molecules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.get_all_predicted_molecules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all the predictions made by a predictor set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_count</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – Maximum number of predictions to return.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaMoleculesDataFrame</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a dataframe that contains the predicted scores for each objective and each previously tested SMILES.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">past_predictions</span> <span class="o">=</span> <span class="k">await</span> <span class="n">my_predictor_set</span><span class="o">.</span><span class="n">get_all_predicted_molecules</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the predictor set</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.get_predictors">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_predictors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.get_predictors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.get_predictors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Predictors (objectives) of the predictor set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of the predictors</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.predict">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">predict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the prediction model on a list of smiles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>smiles_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – List of achiral SMILES for prediction.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a dataframe that contains the predicted scores for each objective and each SMILES.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="s1">&#39;C1=CC(CCCc2ccccc2)C=C1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;CCC&#39;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictions</span> <span class="o">=</span> <span class="k">await</span> <span class="n">my_predictor_set</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">smiles_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.show_all_metrics">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">show_all_metrics</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.show_all_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.show_all_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the metrics allowing the user to evaluate the performances of the predictor set.
+The metrics are displayed as an <cite>ipywidgets</cite> with one tab per objective of the model.
+In each tab, the following performance indicators are shown for both the train and test sets:</p>
+<ul class="simple">
+<li><p>Precision: a measure of how many of the positive predictions made are correct (truly positive cases).</p></li>
+<li><p>Recall: a measure of how many of the positive cases were correctly predicted by the classifier.</p></li>
+<li><p>AUC: Area Under the Curve of the ROC (Receiver Operating Characteristic) curve, a measure of the ability of classifier to distinguish between classes.</p></li>
+<li><p>F1-score: a score that combines precision and recall in a balanced way.</p></li>
+<li><p>ROC curve: the basis for the calculation of the AUC. A plot of the False Positive Rate vs True Positive Rates at various thresholds.</p></li>
+<li><p>Confusion matrix: a table that reports the number of true positives, true negatives, false positives and false negatives.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.show_progress">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">show_progress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.show_progress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.show_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the progress of the model training as a progress bar.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.start_learner">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">start_learner</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.start_learner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.start_learner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the training of the predictor set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.stop_learner">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">stop_learner</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.stop_learner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.stop_learner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops and resets the training of the predictor set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.predictor_set.MakyaPredictorSet.unarchive_learner">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">unarchive_learner</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/predictor_set.html#MakyaPredictorSet.unarchive_learner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.predictor_set.MakyaPredictorSet.unarchive_learner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a predictor set that has been archived.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.project">
+<span id="project-module"></span><h2>Project module<a class="headerlink" href="#module-iktos.makya.client.project" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.project.MakyaProject">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaProject</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphql_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short_lived</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">makya_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for Makya Projects. Projects are created via an asynchronous method of class <a class="reference internal" href="#iktos.makya.client.client.MakyaClient" title="iktos.makya.client.client.MakyaClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaClient</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Makya client. Not user specified</p></li>
+<li><p><strong>graphql_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL ID. Set by default. Not user specified</p></li>
+<li><p><strong>slug</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL slug. Not user specified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the project</p></li>
+<li><p><strong>short_lived</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <cite>False</cite>, the project cannot be deleted from pyMakya</p></li>
+<li><p><strong>makya_client</strong> – Makya client. Not user specified</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya</span> <span class="kn">import</span> <span class="n">MakyaClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.ipython_console</span> <span class="kn">import</span> <span class="n">signon</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">MakyaClient</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">base_url</span><span class="o">=</span><span class="n">makya_url</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">email</span><span class="o">=</span><span class="n">makya_user_email</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">password</span><span class="o">=</span><span class="n">makya_user_password</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">signon</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_project</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">create_project</span><span class="p">(</span><span class="s2">&quot;my-new-project&quot;</span><span class="p">,</span> <span class="n">short_lived</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">new_project</span><span class="o">.</span><span class="n">delete_permanently</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.create_dataset">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">create_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Smiles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_id_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.create_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.create_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a> in the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the dataset</p></li>
+<li><p><strong>dataframe</strong> – Dataframe that is to be uploaded as a dataset</p></li>
+<li><p><strong>smiles_col_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the SMILES column in the dataframe</p></li>
+<li><p><strong>custom_id_col_name</strong> – Name of a custom compounds ID column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>, or (None, “ErrorMessage”) if the creation failed.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The dataframe must contains a column of SMILES.</p></li>
+<li><dl class="simple">
+<dt>The dataframe must not contain:</dt><dd><ul>
+<li><p>chiral SMILES,</p></li>
+<li><p>salts,</p></li>
+<li><p>charged molecules,</p></li>
+<li><p>columns that are not SMILES or custom ID and contain strings (ex: “&gt;3”, “N.A.”…)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.create_generator">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">create_generator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.create_generator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.create_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <a class="reference internal" href="#iktos.makya.client.generator.MakyaGenerator" title="iktos.makya.client.generator.MakyaGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaGenerator</span></code></a> in the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>generator_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the generator</p></li>
+<li><p><strong>configuration</strong> (<a class="reference internal" href="iktos.makya.client.generator_configuration.html#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneratorConfiguration</span></code></a>) – Configuration to set up the generator
+The configuration depends on the type of generator. See the <cite>iktos.makya.client.generator_configuration</cite> documentation page.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#iktos.makya.client.generator.MakyaGenerator" title="iktos.makya.client.generator.MakyaGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaGenerator</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.create_post_processor">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">create_post_processor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.create_post_processor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.create_post_processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>create_post_processor creates a new post processing scorer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Name of the scorer</p></li>
+<li><p><strong>scores</strong> (<em>List</em><em>[</em><em>PostProcessorScore</em><em>]</em><em>, </em><em>optional</em>) – List of scores to use with this scorer. Defaults to [].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><strong>Exception</strong></a> – _description_</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The newly created scorer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#iktos.makya.client.post_processor.MakyaPostProcessor" title="iktos.makya.client.post_processor.MakyaPostProcessor">MakyaPostProcessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.create_predictor_set">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">create_predictor_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictor_set_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.create_predictor_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.create_predictor_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a> AutoML model in the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictor_set_name</strong> – Name of the predictor_set</p></li>
+<li><p><strong>targets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – List of the targets (<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaTarget</span></code>) and the associated value ranges for classification
+A target dictionary only supports arguments shown in the example below.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a>.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset_target</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_targets</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictorset_targets</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">target</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_1&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="nb">min</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="nb">max</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">statistics</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">target</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="nb">min</span><span class="o">=</span><span class="n">dataset_target</span><span class="p">[</span><span class="s1">&#39;name_target_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">statistics</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="nb">max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_predictor_set</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_predictor_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;my-predictor-set&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">predictorset_targets</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.create_scorer">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">create_scorer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scorer_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_configs_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.create_scorer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.create_scorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an external API scoring configuration to be later used with generators or post processing scorers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scorer_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the External Scorer</p></li>
+<li><p><strong>api_address</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Url of the main endpoint (or API gateway URI) of the API</p></li>
+<li><p><strong>target_configs_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – Targets configurations. Define here the list of scores to be returned by the API</p></li>
+<li><p><strong>additional_parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]) – Any additionnal parameters your API needs, see full API specifications. Defaults to {}.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><strong>Exception</strong></a> – When an external scorer with the same name exists in the project</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The external scorer object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer">MakyaScorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.delete_permanently">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">delete_permanently</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.delete_permanently"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.delete_permanently" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the project and all of its objects (datasets, predictors, scorers, generators, molecules).
+The data is deleted permanently with no way to restore it.
+Only <cite>short_lived</cite> projects can be deleted from pyMakya.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the project has been deleted, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_archived_generators">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_archived_generators</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_archived_generators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_archived_generators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the archived generators associated with the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the archived generators. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.generator.MakyaGenerator" title="iktos.makya.client.generator.MakyaGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaGenerator</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_archived_post_processors">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_archived_post_processors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_archived_post_processors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_archived_post_processors" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_archived_post_processors loads all the archived post processing scorers of the project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All the archived scorers</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#iktos.makya.client.post_processor.MakyaPostProcessor" title="iktos.makya.client.post_processor.MakyaPostProcessor">MakyaPostProcessor</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_archived_predictor_sets">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_archived_predictor_sets</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_archived_predictor_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_archived_predictor_sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the archived AutoML models associated with the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the archived models. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_datasets">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_datasets</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all the datasets associated with the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the datasets. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_external_scorer">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_external_scorer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_external_scorer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_external_scorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_external_scorer loads an external scorer’s details</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Id of the scorer to load</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The loaded scorer</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer">MakyaScorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_generators">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_generators</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_generators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_generators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the generators associated with the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the generators. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.generator.MakyaGenerator" title="iktos.makya.client.generator.MakyaGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaGenerator</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the project</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_post_processors">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_post_processors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_post_processors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_post_processors" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_post_processors loads all the active post processing scorers of the project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All the active scorers</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#iktos.makya.client.post_processor.MakyaPostProcessor" title="iktos.makya.client.post_processor.MakyaPostProcessor">MakyaPostProcessor</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_predictor">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_predictor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_predictor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_predictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_predictor loads a predictor’s (autoML target) details</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Id of the predictor to load</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The loaded predictor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MakyaPredictor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_predictor_sets">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_predictor_sets</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_predictor_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_predictor_sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all the AutoML models associated with the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the models. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.predictor_set.MakyaPredictorSet" title="iktos.makya.client.predictor_set.MakyaPredictorSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictorSet</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="iktos.makya.client.project.MakyaProject.get_scorers">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">get_scorers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/project.html#MakyaProject.get_scorers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.project.MakyaProject.get_scorers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all the API configurations associated with the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of the API scorers. Format: {<cite>“name”</cite>: <a class="reference internal" href="#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaScorer</span></code></a>}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.scorer">
+<span id="api-scorer-module"></span><h2>API Scorer module<a class="headerlink" href="#module-iktos.makya.client.scorer" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) Iktos - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential</p>
+<dl class="py class">
+<dt id="iktos.makya.client.scorer.MakyaScorer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MakyaScorer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphql_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_configs_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/scorer.html#MakyaScorer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.scorer.MakyaScorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for Makya API configurations. API scorers are created via an asynchronous method of class <a class="reference internal" href="#iktos.makya.client.project.MakyaProject" title="iktos.makya.client.project.MakyaProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaProject</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Makya client. Not user specified</p></li>
+<li><p><strong>project</strong> – Makya project. Not user specified</p></li>
+<li><p><strong>graphql_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL ID. Set by default. Not user specified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – API configuration name</p></li>
+<li><p><strong>slug</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – GraphQL slug. Not user specified</p></li>
+<li><p><strong>api_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – URL to set up the API. See Makya documentation for more details</p></li>
+<li><p><strong>target_configs_list</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span><span class="n">hardChecker</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">index</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">targetName</span><span class="o">=</span><span class="s2">&quot;IC50&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">lowerThreshold</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">upperThreshold</span><span class="o">=</span><span class="kc">None</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span><span class="n">hardChecker</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">index</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">targetName</span><span class="o">=</span><span class="s2">&quot;MolWT&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">lowerThreshold</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">upperThreshold</span><span class="o">=</span><span class="kc">None</span>
+<span class="gp">... </span>    <span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_api_scorer</span> <span class="o">=</span> <span class="k">await</span> <span class="n">my_project</span><span class="o">.</span><span class="n">create_scorer</span><span class="p">(</span><span class="s2">&quot;my_scorer&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;http://localhost:4444&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">config</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The API specifications and set up is very technical.</dt><dd><p>It is addressed in detail in a separate documentation dedicated to API.
+Kindly get in touch with your contact person at Iktos, or send us a message at <a class="reference external" href="mailto:support&#37;&#52;&#48;makya&#46;ai">support<span>&#64;</span>makya<span>&#46;</span>ai</a> from your Makya registered email address.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="py method">
+<dt id="iktos.makya.client.scorer.MakyaScorer.get_permalink_url">
+<code class="sig-name descname"><span class="pre">get_permalink_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/scorer.html#MakyaScorer.get_permalink_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.scorer.MakyaScorer.get_permalink_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The permalink to the API configuration</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to pyMakya client’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="iktos.makya.client.generator_configuration.html" class="btn btn-neutral float-right" title="iktos.makya.client.generator_configuration package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

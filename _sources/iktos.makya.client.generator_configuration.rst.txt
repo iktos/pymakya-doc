@@ -1,0 +1,44 @@
+iktos.makya.client.generator\_configuration package
+===================================================
+
+generator\_configuration module
+---------------------------------------------------------------------------------------
+
+.. automodule:: iktos.makya.client.generator_configuration.generator_configuration
+   :members:
+   :show-inheritance:
+
+finetuning\_generator\_configuration module
+---------------------------------------------------------------------------------------
+
+.. automodule:: iktos.makya.client.generator_configuration.finetuning_generator_configuration
+   :members:
+   :show-inheritance:
+
+fragment\_growing\_generator\_configuration module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: iktos.makya.client.generator_configuration.fragment_growing_generator_configuration
+   :members:
+   :show-inheritance:
+
+fragment\_linking\_generator\_configuration module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: iktos.makya.client.generator_configuration.fragment_linking_generator_configuration
+   :members:
+   :show-inheritance:
+
+novelty\_generator\_configuration module
+------------------------------------------------------------------------------------
+
+.. automodule:: iktos.makya.client.generator_configuration.novelty_generator_configuration
+   :members:
+   :show-inheritance:
+
+filters module
+------------------------------------------------------------------------------------
+
+.. automodule:: iktos.makya.client.generator_configuration.filters
+   :members:
+   :show-inheritance:

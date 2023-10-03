@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iktos.makya.client.project &mdash; pyMakya client 1.11.4 documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+          </a>
+              <div class="version">
+                Tag (1.11.4)
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iktos.makya.client.html">iktos.makya.client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.client">Client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.dataset">Dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.generator">Generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.post_processor">Post-processor (Scorer) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.predictor_set">Predictor Set (AutoML) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.project">Project module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.html#module-iktos.makya.client.scorer">API Scorer module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html">iktos.makya.client.generator_configuration package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.generator_configuration">generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.finetuning_generator_configuration">finetuning_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration">fragment_growing_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration">fragment_linking_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.novelty_generator_configuration">novelty_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../iktos.makya.client.generator_configuration.html#module-iktos.makya.client.generator_configuration.filters">filters module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyMakya client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">iktos.makya.client.project</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for iktos.makya.client.project</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Copyright (C) Iktos - All Rights Reserved</span>
+<span class="sd">Unauthorized copying of this file, via any medium is strictly prohibited</span>
+<span class="sd">Proprietary and confidential</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">iktos.logger</span> <span class="kn">import</span> <span class="n">getLogger</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration.generator_configuration</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">GeneratorConfiguration</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor</span> <span class="kn">import</span> <span class="n">MakyaPostProcessor</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration.post_processor_api_score</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PostProcessorApiScore</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration.post_processor_automl_score</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PostProcessorAutoMLScore</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration.post_processor_descriptor_score</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PostProcessorDescriptorScore</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.post_processor_configuration.post_processor_score</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PostProcessorScore</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.queries.post_processor</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">create_post_processor</span><span class="p">,</span>
+    <span class="n">get_project_archived_post_processors</span><span class="p">,</span>
+    <span class="n">get_project_post_processors</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iktos.makya.client.queries.utils</span> <span class="kn">import</span> <span class="n">to_global_id</span>
+
+<span class="kn">from</span> <span class="nn">.dataset</span> <span class="kn">import</span> <span class="n">MakyaDataset</span>
+<span class="kn">from</span> <span class="nn">.generator</span> <span class="kn">import</span> <span class="n">MakyaGenerator</span>
+<span class="kn">from</span> <span class="nn">.generator_engine</span> <span class="kn">import</span> <span class="n">MakyaGeneratorEngine</span>
+<span class="kn">from</span> <span class="nn">.predictor_set</span> <span class="kn">import</span> <span class="n">MakyaPredictor</span><span class="p">,</span> <span class="n">MakyaPredictorSet</span>
+<span class="kn">from</span> <span class="nn">.queries.common</span> <span class="kn">import</span> <span class="n">check_smiles</span>
+<span class="kn">from</span> <span class="nn">.queries.dataset</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">add_molecules_to_dataset</span><span class="p">,</span>
+    <span class="n">create_dataset</span><span class="p">,</span>
+    <span class="n">get_dataset_by_name</span><span class="p">,</span>
+    <span class="n">get_datasets</span><span class="p">,</span>
+    <span class="n">mark_dataset_uploaded</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.queries.generator</span> <span class="kn">import</span> <span class="n">create_generator</span><span class="p">,</span> <span class="n">get_archived_generators</span><span class="p">,</span> <span class="n">get_generators</span>
+<span class="kn">from</span> <span class="nn">.queries.generator_engine</span> <span class="kn">import</span> <span class="n">get_generator_engines</span>
+<span class="kn">from</span> <span class="nn">.queries.predictor_set</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">create_predictor_set</span><span class="p">,</span>
+    <span class="n">get_predictor</span><span class="p">,</span>
+    <span class="n">get_project_archived_predictor_sets</span><span class="p">,</span>
+    <span class="n">get_project_predictor_sets</span><span class="p">,</span>
+    <span class="n">update_predictor_set</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.queries.project</span> <span class="kn">import</span> <span class="n">delete_project</span>
+<span class="kn">from</span> <span class="nn">.queries.scorer</span> <span class="kn">import</span> <span class="n">create_scorer</span><span class="p">,</span> <span class="n">get_external_scorer</span><span class="p">,</span> <span class="n">get_project_scorers</span>
+<span class="kn">from</span> <span class="nn">.scorer</span> <span class="kn">import</span> <span class="n">MakyaScorer</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;iktos.makya.client.project&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">batch</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ndx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">iterable</span><span class="p">[</span><span class="n">ndx</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">ndx</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">)]</span>
+
+
+<div class="viewcode-block" id="MakyaProject"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject">[docs]</a><span class="k">class</span> <span class="nc">MakyaProject</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for Makya Projects. Projects are created via an asynchronous method of class :py:class:`~iktos.makya.client.client.MakyaClient`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client: Makya client. Not user specified</span>
+<span class="sd">        graphql_id: GraphQL ID. Set by default. Not user specified</span>
+<span class="sd">        slug: GraphQL slug. Not user specified</span>
+<span class="sd">        name: Name of the project</span>
+<span class="sd">        short_lived: If `False`, the project cannot be deleted from pyMakya</span>
+<span class="sd">        makya_client: Makya client. Not user specified</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; from iktos.makya import MakyaClient</span>
+<span class="sd">        &gt;&gt;&gt; from iktos.makya.client.ipython_console import signon</span>
+<span class="sd">        &gt;&gt;&gt; client = MakyaClient(</span>
+<span class="sd">        ...     base_url=makya_url,</span>
+<span class="sd">        ...     email=makya_user_email,</span>
+<span class="sd">        ...     password=makya_user_password,</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; await signon(client)</span>
+<span class="sd">        &gt;&gt;&gt; new_project = await client.create_project(&quot;my-new-project&quot;, short_lived=True)</span>
+<span class="sd">        &gt;&gt;&gt; await new_project.delete_permanently()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">client</span><span class="p">,</span>
+        <span class="n">graphql_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">slug</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">short_lived</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">makya_client</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span> <span class="o">=</span> <span class="n">graphql_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slug</span> <span class="o">=</span> <span class="n">slug</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">short_lived</span> <span class="o">=</span> <span class="n">short_lived</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">makya_client</span> <span class="o">=</span> <span class="n">makya_client</span>
+
+<div class="viewcode-block" id="MakyaProject.get_permalink_url"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_permalink_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_permalink_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The permalink to the project</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">makya_client</span><span class="o">.</span><span class="n">get_permalink_url</span><span class="p">()</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s1">&#39;</span></div>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;MakyaProject(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="MakyaProject.delete_permanently"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.delete_permanently">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete_permanently</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes the project and all of its objects (datasets, predictors, scorers, generators, molecules).</span>
+<span class="sd">        The data is deleted permanently with no way to restore it.</span>
+<span class="sd">        Only `short_lived` projects can be deleted from pyMakya.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the project has been deleted, False otherwise</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">short_lived</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">delete_project</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Only short lived projects can be deleted&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_generators"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_generators">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_generators</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the generators associated with the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the generators. Format: {`&quot;name&quot;`: :py:class:`~iktos.makya.client.generator.MakyaGenerator`}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">generators</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_generators</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+        <span class="n">generators_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">generator</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">generator</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span>
+            <span class="n">generators_dict</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MakyaGenerator</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">created_at</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;createdAt&#39;</span><span class="p">],</span>
+                <span class="n">engine</span><span class="o">=</span><span class="n">MakyaGeneratorEngine</span><span class="p">(</span>
+                    <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                    <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;generatorEngine&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                    <span class="nb">id</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;generatorEngine&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="n">has_additional_parameters</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;generatorEngine&#39;</span><span class="p">][</span>
+                        <span class="s1">&#39;hasAdditionalParameters&#39;</span>
+                    <span class="p">],</span>
+                <span class="p">),</span>
+                <span class="c1"># TODO Retrieve the full configuration</span>
+                <span class="n">configuration</span><span class="o">=</span><span class="n">GeneratorConfiguration</span><span class="p">(</span>
+                    <span class="n">generator_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">additional_parameters</span><span class="o">=</span><span class="kc">None</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">generators_dict</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_archived_generators"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_archived_generators">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_archived_generators</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the archived generators associated with the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the archived generators. Format: {`&quot;name&quot;`: :py:class:`~iktos.makya.client.generator.MakyaGenerator`}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">generators</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_archived_generators</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+        <span class="n">generators_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">generator</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">generator</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span>
+            <span class="n">generators_dict</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MakyaGenerator</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">engine</span><span class="o">=</span><span class="n">MakyaGeneratorEngine</span><span class="p">(</span>
+                    <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                    <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;generatorEngine&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                    <span class="nb">id</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;generatorEngine&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="n">has_additional_parameters</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;generatorEngine&#39;</span><span class="p">][</span>
+                        <span class="s1">&#39;hasAdditionalParameters&#39;</span>
+                    <span class="p">],</span>
+                <span class="p">),</span>
+                <span class="c1"># TODO Retrieve the full configuration</span>
+                <span class="n">configuration</span><span class="o">=</span><span class="n">GeneratorConfiguration</span><span class="p">(</span>
+                    <span class="n">generator_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">additional_parameters</span><span class="o">=</span><span class="kc">None</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">generators_dict</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_generator_engines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">MakyaGeneratorEngine</span><span class="p">]:</span>
+        <span class="n">engines</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_generator_engines</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+        <span class="n">engines_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">engine</span> <span class="ow">in</span> <span class="n">engines</span><span class="p">:</span>
+            <span class="n">engines_dict</span><span class="p">[</span><span class="n">engine</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MakyaGeneratorEngine</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">engine</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="nb">id</span><span class="o">=</span><span class="n">engine</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">has_additional_parameters</span><span class="o">=</span><span class="n">engine</span><span class="p">[</span><span class="s1">&#39;hasAdditionalParameters&#39;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">engines_dict</span>
+
+<div class="viewcode-block" id="MakyaProject.get_datasets"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_datasets">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_datasets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets all the datasets associated with the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the datasets. Format: {`&quot;name&quot;`: :py:class:`~iktos.makya.client.dataset.MakyaDataset`}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">datasets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_datasets</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+        <span class="n">datasets_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span>
+            <span class="n">datasets_dict</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MakyaDataset</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">datasets_dict</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_predictor_sets"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_predictor_sets">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_predictor_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets all the AutoML models associated with the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the models. Format: {`&quot;name&quot;`: :py:class:`~iktos.makya.client.predictor_set.MakyaPredictorSet`}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">predictor_sets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_project_predictor_sets</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">project_slug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slug</span>
+        <span class="p">)</span>
+        <span class="n">predictor_sets_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">predictor_set</span> <span class="ow">in</span> <span class="n">predictor_sets</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+            <span class="n">predictor_sets_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">MakyaPredictorSet</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">created_at</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;createdAt&#39;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">predictor_sets_dict</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_archived_predictor_sets"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_archived_predictor_sets">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_archived_predictor_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the archived AutoML models associated with the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the archived models. Format: {`&quot;name&quot;`: :py:class:`~iktos.makya.client.predictor_set.MakyaPredictorSet`}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">predictor_sets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_project_archived_predictor_sets</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">project_slug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slug</span>
+        <span class="p">)</span>
+        <span class="n">predictor_sets_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">predictor_set</span> <span class="ow">in</span> <span class="n">predictor_sets</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+            <span class="n">predictor_sets_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">MakyaPredictorSet</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">predictor_set</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">predictor_sets_dict</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_scorers"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_scorers">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_scorers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets all the API configurations associated with the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the API scorers. Format: {`&quot;name&quot;`: :py:class:`~iktos.makya.client.scorer.MakyaScorer`}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">scorers</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_project_scorers</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">project_slug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+        <span class="n">scorers_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">scorer</span> <span class="ow">in</span> <span class="n">scorers</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+            <span class="n">scorers_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">MakyaScorer</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">api_url</span><span class="o">=</span><span class="n">scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;apiUrl&#39;</span><span class="p">],</span>
+                <span class="n">target_configs_list</span><span class="o">=</span><span class="n">scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;targetConfigsList&#39;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">scorers_dict</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_external_scorer"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_external_scorer">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_external_scorer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MakyaScorer</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;get_external_scorer loads an external scorer&#39;s details</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (str): Id of the scorer to load</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MakyaScorer: The loaded scorer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">db_scorer</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_external_scorer</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">external_scorer_id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="n">scorer</span> <span class="o">=</span> <span class="n">MakyaScorer</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">graphql_id</span><span class="o">=</span><span class="n">db_scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="n">slug</span><span class="o">=</span><span class="n">db_scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">db_scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">api_url</span><span class="o">=</span><span class="n">db_scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;apiUrl&#39;</span><span class="p">],</span>
+            <span class="n">target_configs_list</span><span class="o">=</span><span class="n">db_scorer</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;targetConfigsList&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">scorer</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_predictor"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_predictor">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_predictor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MakyaPredictor</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;get_predictor loads a predictor&#39;s (autoML target) details</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (str): Id of the predictor to load</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MakyaPredictor: The loaded predictor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">db_predictor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_predictor</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">predictor_id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">db_predictor</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">blueprint</span><span class="o">=</span><span class="n">db_predictor</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;blueprint&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="n">predictor</span> <span class="o">=</span> <span class="n">MakyaPredictor</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">predictor_set</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">graphql_id</span><span class="o">=</span><span class="n">db_predictor</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">predictor</span></div>
+
+<div class="viewcode-block" id="MakyaProject.create_dataset"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.create_dataset">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_dataset</span><span class="p">(</span>  <span class="c1"># noqa</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">dataset_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">dataframe</span><span class="p">,</span>
+        <span class="n">smiles_col_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Smiles&#39;</span><span class="p">,</span>
+        <span class="n">custom_id_col_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">MakyaDataset</span><span class="p">],</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new :py:class:`~iktos.makya.client.dataset.MakyaDataset` in the project.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dataset_name: Name of the dataset</span>
+<span class="sd">            dataframe: Dataframe that is to be uploaded as a dataset</span>
+<span class="sd">            smiles_col_name: Name of the SMILES column in the dataframe</span>
+<span class="sd">            custom_id_col_name: Name of a custom compounds ID column</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :py:class:`~iktos.makya.client.dataset.MakyaDataset`, or (None, &quot;ErrorMessage&quot;) if the creation failed.</span>
+
+<span class="sd">        Notes:</span>
+
+<span class="sd">            - The dataframe must contains a column of SMILES.</span>
+<span class="sd">            - The dataframe must not contain:</span>
+<span class="sd">                - chiral SMILES,</span>
+<span class="sd">                - salts,</span>
+<span class="sd">                - charged molecules,</span>
+<span class="sd">                - columns that are not SMILES or custom ID and contain strings (ex: &quot;&gt;3&quot;, &quot;N.A.&quot;...)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">smiles_col_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_get_column_name_in_dataframe</span><span class="p">(</span>
+            <span class="n">dataframe</span><span class="p">,</span> <span class="n">smiles_col_name</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">smiles_col_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;The dataframe doesn&#39;t contain the requested SMILES column&quot;</span>
+
+        <span class="k">if</span> <span class="n">custom_id_col_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">custom_id_col_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_get_column_name_in_dataframe</span><span class="p">(</span>
+                <span class="n">dataframe</span><span class="p">,</span> <span class="n">custom_id_col_name</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">custom_id_col_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span>
+                    <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">&quot;The dataframe doesn&#39;t contain the requested custom id column&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="n">dataset_with_same_name</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_dataset_by_name</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">project_slug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">,</span> <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">dataset_with_same_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">&quot;A dataset with the same already exists, please change the name&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">target_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">target_name</span> <span class="o">!=</span> <span class="n">smiles_col_name</span> <span class="ow">and</span> <span class="n">target_name</span> <span class="o">!=</span> <span class="n">custom_id_col_name</span>
+            <span class="p">):</span>  <span class="c1"># noqa</span>
+                <span class="n">target_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target_name</span><span class="p">)</span>
+
+        <span class="n">molecule_edges</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">smiles</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">smiles_col_name</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">smiles</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">smiles_list</span><span class="p">:</span>
+                <span class="n">smiles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+
+            <span class="n">edge_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;molecule&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="n">smiles</span><span class="p">}}</span>
+            <span class="k">if</span> <span class="n">custom_id_col_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">customId</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">custom_id_col_name</span><span class="p">])</span>
+                <span class="n">edge_dict</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">][</span><span class="s1">&#39;customId&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">customId</span>
+
+            <span class="k">for</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="n">target_names</span><span class="p">:</span>
+                <span class="n">target_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">target_name</span><span class="p">}</span>
+                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">target_name</span><span class="p">])</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">target_name</span><span class="p">])</span>
+                        <span class="n">target_dict</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                        <span class="n">target_dict</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">target_name</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">target_name</span><span class="p">]):</span>
+                    <span class="n">target_dict</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">target_name</span><span class="p">]</span>
+
+                <span class="n">edge_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;targetsValue&#39;</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target_dict</span><span class="p">)</span>
+            <span class="n">molecule_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge_dict</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">check_smiles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">smiles_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Failed to check SMILES list&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;isValid&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">result</span>
+
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;chirals&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">result</span>
+
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;invalids&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">result</span>
+
+        <span class="n">dataset</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">create_dataset</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">,</span>
+            <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span>
+            <span class="n">target_names</span><span class="o">=</span><span class="n">target_names</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">err</span>
+
+        <span class="n">dataset_id</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="n">dataset_slug</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">]</span>
+        <span class="n">dataset_name</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">(</span><span class="n">molecule_edges</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">add_molecules_to_dataset</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">dataset_id</span><span class="o">=</span><span class="n">dataset_id</span><span class="p">,</span> <span class="n">molecule_edges</span><span class="o">=</span><span class="n">x</span>
+            <span class="p">)</span>
+
+            <span class="k">assert</span> <span class="p">(</span>
+                <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="ow">and</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;addMoleculesValuesToDataset&#39;</span><span class="p">][</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">mark_dataset_uploaded</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">dataset_id</span><span class="o">=</span><span class="n">dataset_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">MakyaDataset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">dataset_id</span><span class="p">,</span> <span class="n">dataset_slug</span><span class="p">,</span> <span class="n">dataset_name</span><span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_try_get_column_name_in_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataframe</span><span class="p">,</span> <span class="n">column_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">column_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_column_index</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">column_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The dataframe doesn&#39;t contain any column matching </span><span class="si">{</span><span class="n">column_name</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+            <span class="k">return</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_get_column_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataframe</span><span class="p">,</span> <span class="n">column_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;^</span><span class="si">{</span><span class="n">column_name</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">results</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="kc">True</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+<div class="viewcode-block" id="MakyaProject.create_predictor_set"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.create_predictor_set">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_predictor_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictor_set_name</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new :py:class:`~iktos.makya.client.predictor_set.MakyaPredictorSet` AutoML model in the project.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            predictor_set_name: Name of the predictor_set</span>
+<span class="sd">            targets: List of the targets (:py:class:`~iktos.makya.client.dataset.MakyaTarget`) and the associated value ranges for classification</span>
+<span class="sd">                A target dictionary only supports arguments shown in the example below.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :py:class:`~iktos.makya.client.predictor_set.MakyaPredictorSet`.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; dataset_target = await dataset.get_targets()</span>
+<span class="sd">            &gt;&gt;&gt; predictorset_targets = [</span>
+<span class="sd">            ...     dict(</span>
+<span class="sd">            ...         target=dataset_target[&#39;name_target_1&#39;],</span>
+<span class="sd">            ...         min=0.2,</span>
+<span class="sd">            ...         max=dataset_target[&#39;name_target_1&#39;].statistics[&#39;max&#39;],</span>
+<span class="sd">            ...     ),</span>
+<span class="sd">            ...     dict(</span>
+<span class="sd">            ...         target=dataset_target[&#39;name_target_2&#39;],</span>
+<span class="sd">            ...         min=dataset_target[&#39;name_target_1&#39;].statistics[&#39;min&#39;],</span>
+<span class="sd">            ...         max=50,</span>
+<span class="sd">            ...     ),</span>
+<span class="sd">            ... ]</span>
+<span class="sd">            &gt;&gt;&gt; my_predictor_set = await project.create_predictor_set(</span>
+<span class="sd">            ...     &#39;my-predictor-set&#39;,</span>
+<span class="sd">            ...     predictorset_targets</span>
+<span class="sd">            ... )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">predictor_set_dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">create_predictor_set</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">,</span>
+            <span class="n">predictor_set_name</span><span class="o">=</span><span class="n">predictor_set_name</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">predictor_set_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Predictor Set with name &quot;</span><span class="si">{</span><span class="n">predictor_set_name</span><span class="si">}</span><span class="s1">&quot; already exists in project &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+            <span class="p">)</span>  <span class="c1"># noqa</span>
+
+        <span class="n">predictor_set</span> <span class="o">=</span> <span class="n">MakyaPredictorSet</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">graphql_id</span><span class="o">=</span><span class="n">predictor_set_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="n">slug</span><span class="o">=</span><span class="n">predictor_set_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">predictor_set_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">targets</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">predictor_set</span>
+
+        <span class="n">targets_dto</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">:</span>
+            <span class="n">blueprint</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+
+            <span class="k">if</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">blueprint</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">][</span><span class="s1">&#39;min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">blueprint</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">][</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="s1">&#39;min&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="s1">&#39;max&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blueprint</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">]</span>
+            <span class="p">):</span>  <span class="c1"># noqa</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A min or max is required in target blueprint&#39;</span><span class="p">)</span>  <span class="c1"># noqa</span>
+
+            <span class="n">targets_dto</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span><span class="s1">&#39;blueprint&#39;</span><span class="p">:</span> <span class="n">blueprint</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">}</span>
+            <span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">update_predictor_set</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">predictor_set_id</span><span class="o">=</span><span class="n">predictor_set</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">,</span>
+            <span class="n">targets</span><span class="o">=</span><span class="n">targets_dto</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;updatePredictorSet&#39;</span><span class="p">][</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Failed to create predictor set&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">predictor_set</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__get_engine_by_id</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">engine_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MakyaGeneratorEngine</span><span class="p">]:</span>
+        <span class="n">engines</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_generator_engines</span><span class="p">()</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">engines</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">engine_id</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">engine</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__validate_additional_parameters</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">additional_parameters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">engine</span><span class="p">:</span> <span class="n">MakyaGeneratorEngine</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">additional_parameters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s1">&#39;You must add additional_parameters when using this generator&#39;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="MakyaProject.create_generator"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.create_generator">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_generator</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">generator_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">configuration</span><span class="p">:</span> <span class="n">GeneratorConfiguration</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new :py:class:`~iktos.makya.client.generator.MakyaGenerator` in the project.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            generator_name: Name of the generator</span>
+<span class="sd">            configuration: Configuration to set up the generator</span>
+<span class="sd">                The configuration depends on the type of generator. See the `iktos.makya.client.generator_configuration` documentation page.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :py:class:`~iktos.makya.client.generator.MakyaGenerator`.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">generator_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Generator type not set&quot;</span><span class="p">)</span>
+
+        <span class="n">configuration_dict</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">configuration_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid generator configuration&quot;</span><span class="p">)</span>
+
+        <span class="n">engine</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_engine_by_id</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">generator_type</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">engine</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Generator engine unknown or unavailable&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">engine</span><span class="o">.</span><span class="n">has_additional_parameters</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__validate_additional_parameters</span><span class="p">(</span>
+                <span class="n">configuration</span><span class="o">.</span><span class="n">additional_parameters</span><span class="p">,</span> <span class="n">engine</span>
+            <span class="p">)</span>
+
+        <span class="n">generator_dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">create_generator</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">,</span>
+            <span class="n">generator_name</span><span class="o">=</span><span class="n">generator_name</span><span class="p">,</span>
+            <span class="n">generator_type</span><span class="o">=</span><span class="n">engine</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">generator_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Generator with name &quot;</span><span class="si">{</span><span class="n">generator_name</span><span class="si">}</span><span class="s1">&quot; already exists in project &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+            <span class="p">)</span>  <span class="c1"># noqa</span>
+
+        <span class="n">generator</span> <span class="o">=</span> <span class="n">MakyaGenerator</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">graphql_id</span><span class="o">=</span><span class="n">generator_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="n">slug</span><span class="o">=</span><span class="n">generator_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">generator_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+            <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">generator</span><span class="o">.</span><span class="n">update_configuration</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">generator</span></div>
+
+<div class="viewcode-block" id="MakyaProject.create_scorer"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.create_scorer">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_scorer</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">scorer_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">api_address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">target_configs_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span>
+        <span class="n">additional_parameters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an external API scoring configuration to be later used with generators or post processing scorers.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            scorer_name: Name of the External Scorer</span>
+<span class="sd">            api_address: Url of the main endpoint (or API gateway URI) of the API</span>
+<span class="sd">            target_configs_list: Targets configurations. Define here the list of scores to be returned by the API</span>
+<span class="sd">            additional_parameters: Any additionnal parameters your API needs, see full API specifications. Defaults to {}.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            Exception: When an external scorer with the same name exists in the project</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MakyaScorer: The external scorer object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">scorer_dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">create_scorer</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">,</span>
+            <span class="n">scorer_name</span><span class="o">=</span><span class="n">scorer_name</span><span class="p">,</span>
+            <span class="n">api_address</span><span class="o">=</span><span class="n">api_address</span><span class="p">,</span>
+            <span class="n">target_configs_list</span><span class="o">=</span><span class="n">target_configs_list</span><span class="p">,</span>
+            <span class="n">additional_parameters</span><span class="o">=</span><span class="n">additional_parameters</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">scorer_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Scorer with name &quot;</span><span class="si">{</span><span class="n">scorer_name</span><span class="si">}</span><span class="s1">&quot; already exists in project &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+            <span class="p">)</span>  <span class="c1"># noqa</span>
+
+        <span class="n">scorer</span> <span class="o">=</span> <span class="n">MakyaScorer</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">graphql_id</span><span class="o">=</span><span class="n">scorer_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="n">slug</span><span class="o">=</span><span class="n">scorer_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">scorer_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">api_url</span><span class="o">=</span><span class="n">scorer_dict</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">][</span><span class="s1">&#39;apiUrl&#39;</span><span class="p">],</span>
+            <span class="n">target_configs_list</span><span class="o">=</span><span class="n">target_configs_list</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">scorer</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_post_processors"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_post_processors">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_post_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;get_post_processors loads all the active post processing scorers of the project</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List[MakyaPostProcessor]: All the active scorers</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">post_processors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_project_post_processors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+        <span class="n">post_processors_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">post_processor</span> <span class="ow">in</span> <span class="n">post_processors</span><span class="p">:</span>
+            <span class="n">post_processors_dict</span><span class="p">[</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MakyaPostProcessor</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">makya_client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">created_at</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;createdAt&#39;</span><span class="p">],</span>
+                <span class="n">scores</span><span class="o">=</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__map_post_processor_scores</span><span class="p">(</span>
+                    <span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;scores&#39;</span><span class="p">],</span> <span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">post_processors_dict</span></div>
+
+<div class="viewcode-block" id="MakyaProject.get_archived_post_processors"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.get_archived_post_processors">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_archived_post_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;get_archived_post_processors loads all the archived post processing scorers of the project</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List[MakyaPostProcessor]: All the archived scorers</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">post_processors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_project_archived_post_processors</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span>
+        <span class="p">)</span>
+        <span class="n">post_processors_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">post_processor</span> <span class="ow">in</span> <span class="n">post_processors</span><span class="p">:</span>
+            <span class="n">post_processors_dict</span><span class="p">[</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MakyaPostProcessor</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">makya_client</span><span class="p">,</span>
+                <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">graphql_id</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="n">slug</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+                <span class="n">created_at</span><span class="o">=</span><span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;createdAt&#39;</span><span class="p">],</span>
+                <span class="n">scores</span><span class="o">=</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__map_post_processor_scores</span><span class="p">(</span>
+                    <span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;scores&#39;</span><span class="p">],</span> <span class="n">post_processor</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">post_processors_dict</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__map_post_processor_scores</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scores</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">scores_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PostProcessorScore</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">scores</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">scores_list</span>
+
+        <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;DESCRIPTOR&quot;</span><span class="p">:</span>
+                <span class="n">scores_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PostProcessorDescriptorScore</span><span class="p">(</span><span class="n">descriptor</span><span class="o">=</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]))</span>
+            <span class="k">elif</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;PREDICTOR&quot;</span><span class="p">:</span>
+                <span class="n">scores_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">PostProcessorAutoMLScore</span><span class="p">(</span>
+                        <span class="n">predictor</span><span class="o">=</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_predictor</span><span class="p">(</span>
+                            <span class="n">to_global_id</span><span class="p">(</span><span class="s2">&quot;Predictor&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;EXTERNAL_SCORER&quot;</span><span class="p">:</span>
+                <span class="n">scores_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">PostProcessorApiScore</span><span class="p">(</span>
+                        <span class="n">scorer</span><span class="o">=</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_external_scorer</span><span class="p">(</span>
+                            <span class="n">to_global_id</span><span class="p">(</span><span class="s2">&quot;ExternalScorer&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">scores_list</span>
+
+<div class="viewcode-block" id="MakyaProject.create_post_processor"><a class="viewcode-back" href="../../../../iktos.makya.client.html#iktos.makya.client.project.MakyaProject.create_post_processor">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_post_processor</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">scores</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PostProcessorScore</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MakyaPostProcessor</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;create_post_processor creates a new post processing scorer</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): Name of the scorer</span>
+<span class="sd">            scores (List[PostProcessorScore], optional): List of scores to use with this scorer. Defaults to [].</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            Exception: _description_</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MakyaPostProcessor: The newly created scorer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">post_processor_dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">create_post_processor</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+            <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphql_id</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">scores</span><span class="o">=</span><span class="n">scores</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">post_processor_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Scorer with name &quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot; already exists in project &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+            <span class="p">)</span>  <span class="c1"># noqa</span>
+
+        <span class="n">post_processor</span> <span class="o">=</span> <span class="n">MakyaPostProcessor</span><span class="p">(</span>
+            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">makya_client</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">graphql_id</span><span class="o">=</span><span class="n">post_processor_dict</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+            <span class="n">slug</span><span class="o">=</span><span class="n">post_processor_dict</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">post_processor_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">scores</span><span class="o">=</span><span class="n">scores</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">post_processor</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

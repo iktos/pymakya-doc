@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iktos.makya.client.generator_configuration package &mdash; pyMakya client 1.11.4 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="iktos.makya.client package" href="iktos.makya.client.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+              <div class="version">
+                Tag (1.11.4)
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="iktos.makya.client.html">iktos.makya.client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.client">Client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.dataset">Dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.generator">Generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.post_processor">Post-processor (Scorer) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.predictor_set">Predictor Set (AutoML) module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.project">Project module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iktos.makya.client.html#module-iktos.makya.client.scorer">API Scorer module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">iktos.makya.client.generator_configuration package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator_configuration.generator_configuration">generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator_configuration.finetuning_generator_configuration">finetuning_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration">fragment_growing_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration">fragment_linking_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator_configuration.novelty_generator_configuration">novelty_generator_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-iktos.makya.client.generator_configuration.filters">filters module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyMakya client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">iktos.makya.client.generator_configuration package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="iktos-makya-client-generator-configuration-package">
+<h1>iktos.makya.client.generator_configuration package<a class="headerlink" href="#iktos-makya-client-generator-configuration-package" title="Permalink to this headline">¶</a></h1>
+<section id="module-iktos.makya.client.generator_configuration.generator_configuration">
+<span id="generator-configuration-module"></span><h2>generator_configuration module<a class="headerlink" href="#module-iktos.makya.client.generator_configuration.generator_configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">GeneratorConfiguration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substructure_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_scorers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/generator_configuration.html#GeneratorConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Template class for a generator configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>generator_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Type of generator. Set by default.</p></li>
+<li><p><strong>additional_parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – Additional parameters for generator configuration.</p></li>
+<li><p><strong>datasets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>]]) – Datasets to be used as chemical space.
+Can be a single molecule.</p></li>
+<li><p><strong>predictors</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictor</span></code>]]) – Predictors (predictor sets’s objectives) to guide generation.</p></li>
+<li><p><strong>substructure_constraints</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructureConstraint</span></code>]]) – List of substructure constraints on the generated molecules.
+Set with the class <a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="iktos.makya.client.generator_configuration.filters.SubstructConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructConstraint</span></code></a>.</p></li>
+<li><p><strong>external_scorers</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaScorer</span></code></a>]]) – List of API configurations to score the generated molecules.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.generator_configuration.finetuning_generator_configuration">
+<span id="finetuning-generator-configuration-module"></span><h2>finetuning_generator_configuration module<a class="headerlink" href="#module-iktos.makya.client.generator_configuration.finetuning_generator_configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.finetuning_generator_configuration.FineTuningGeneratorConfiguration">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">FineTuningGeneratorConfiguration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substructure_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_scorers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/finetuning_generator_configuration.html#FineTuningGeneratorConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.finetuning_generator_configuration.FineTuningGeneratorConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration</span></code></a></p>
+<p>Configuration class for a Fine Tuning Generator. Needed to create a generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>generator_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Set by default. Not user specified</p></li>
+<li><p><strong>additional_parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – Additional parameters for generator configuration.</p></li>
+<li><p><strong>datasets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>]]) – Datasets to be used as chemical space.
+Can be a single molecule.</p></li>
+<li><p><strong>predictors</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictor</span></code>]]) – Predictors (predictor sets’s objectives) to guide generation.</p></li>
+<li><p><strong>substructure_constraints</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructureConstraint</span></code>]]) – List of substructure constraints on the generated molecules.
+Set with the class <a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="iktos.makya.client.generator_configuration.filters.SubstructConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructConstraint</span></code></a>.</p></li>
+<li><p><strong>external_scorers</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaScorer</span></code></a>]]) – List of API configurations to score the generated molecules.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="n">FineTuningGeneratorConfiguration</span><span class="p">,</span> <span class="n">MatchSubstructureConstraint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datasets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">get_datasets</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictor_sets</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">get_predictor_sets</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">predictor_sets</span><span class="p">[</span><span class="s1">&#39;my_predictor_set&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_predictors</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">goals</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">MatchSubstructureConstraint</span><span class="p">(</span><span class="n">smarts</span><span class="o">=</span><span class="s2">&quot;CC&quot;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="n">FineTuningGeneratorConfiguration</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">datasets</span><span class="o">=</span><span class="p">[</span><span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;my-dataset&#39;</span><span class="p">]],</span>
+<span class="gp">... </span>    <span class="n">substructure_constraints</span><span class="o">=</span><span class="n">goals</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="n">predictors</span><span class="p">[</span><span class="s1">&#39;Target1&#39;</span><span class="p">],</span> <span class="n">predictors</span><span class="p">[</span><span class="s1">&#39;Target2&#39;</span><span class="p">]],</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_generator</span><span class="p">(</span><span class="n">generator_name</span><span class="o">=</span><span class="s2">&quot;my-fine-tuning&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration">
+<span id="fragment-growing-generator-configuration-module"></span><h2>fragment_growing_generator_configuration module<a class="headerlink" href="#module-iktos.makya.client.generator_configuration.fragment_growing_generator_configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.fragment_growing_generator_configuration.FragmentGrowingGeneratorConfiguration">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">FragmentGrowingGeneratorConfiguration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substructure_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_scorers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_molecule_smiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_vector_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_product_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boost_search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/fragment_growing_generator_configuration.html#FragmentGrowingGeneratorConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.fragment_growing_generator_configuration.FragmentGrowingGeneratorConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration</span></code></a></p>
+<p>Configuration class for a Fragment Growing generator. Needed to create a generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference_molecule_smiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – SMILES of the fragment from which molecules are grown.</p></li>
+<li><p><strong>exit_vector_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.ExitVectorsParams" title="iktos.makya.client.generator_configuration.filters.ExitVectorsParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitVectorsParams</span></code></a>]]) – Fragment exit vectors. Can be 1 or 2.
+To compute possible exit vectors, use the <a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.client.MakyaClient.get_possible_exit_vectors" title="iktos.makya.client.client.MakyaClient.get_possible_exit_vectors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_possible_exit_vectors()</span></code></a> method.
+To draw possible exit vectors, use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_molecule_with_exit_vectors()</span></code> function.</p></li>
+<li><p><strong>final_product_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.CompoundFilter" title="iktos.makya.client.generator_configuration.filters.CompoundFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompoundFilter</span></code></a>]]) – Filters on final generated molecules.</p></li>
+<li><p><strong>boost_search</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>]) – Activate the boost search option if set to <cite>True</cite>.</p></li>
+<li><p><strong>generator_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Set by default. Not user specified</p></li>
+<li><p><strong>additional_parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – Additional parameters for generator configuration.</p></li>
+<li><p><strong>datasets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>]]) – Datasets to be used as chemical space.
+Can be a single molecule.</p></li>
+<li><p><strong>predictors</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictor</span></code>]]) – Predictors (predictor sets’s objectives) to guide generation.</p></li>
+<li><p><strong>substructure_constraints</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructureConstraint</span></code>]]) – List of substructure constraints on the generated molecules.
+Set with the class <a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="iktos.makya.client.generator_configuration.filters.SubstructConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructConstraint</span></code></a>.</p></li>
+<li><p><strong>external_scorers</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaScorer</span></code></a>]]) – List of API configurations to score the generated molecules.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reference_smiles</span> <span class="o">=</span> <span class="s1">&#39;Nc1ncnc2[nH]cnc12&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.ipython_console</span> <span class="kn">import</span> <span class="n">draw_molecule_with_exit_vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vectors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_possible_exit_vectors</span><span class="p">(</span><span class="n">reference_smiles</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_molecule_with_exit_vectors</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">reference_smiles</span><span class="p">),</span> <span class="n">vectors</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">FragmentGrowingGeneratorConfiguration</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">ExitVectorsParams</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compounds_filters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;MolWt&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">600</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;TPSA&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.33</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">product_filters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;QED&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.7</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;NumAromaticRings&#39;</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compound_substruct_constraints</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;SUBSTRUCT_MATCH&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">smarts</span><span class="o">=</span><span class="s1">&#39;*~[#6]~[#6](=O)-[#8][H]&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exit_vector_1</span> <span class="o">=</span> <span class="n">ExitVectorsParams</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">smiles</span><span class="o">=</span><span class="n">reference_smiles</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">exit_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">commercial_compound_filters</span><span class="o">=</span><span class="n">commercial_compounds_filters</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">commercial_compound_substruct_constraints</span><span class="o">=</span><span class="n">commercial_compound_substruct_constraints</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="n">FragmentGrowingGeneratorConfiguration</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">reference_molecule_smiles</span><span class="o">=</span><span class="n">reference_smiles</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">exit_vector_params</span><span class="o">=</span><span class="p">[</span><span class="n">exit_vector_1</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">final_product_filters</span><span class="o">=</span><span class="n">product_filters</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_generator</span><span class="p">(</span><span class="n">generator_name</span><span class="o">=</span><span class="s2">&quot;my-fragment-growing&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration">
+<span id="fragment-linking-generator-configuration-module"></span><h2>fragment_linking_generator_configuration module<a class="headerlink" href="#module-iktos.makya.client.generator_configuration.fragment_linking_generator_configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.fragment_linking_generator_configuration.FragmentLinkingGeneratorConfiguration">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">FragmentLinkingGeneratorConfiguration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substructure_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_scorers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_vector_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_product_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/fragment_linking_generator_configuration.html#FragmentLinkingGeneratorConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.fragment_linking_generator_configuration.FragmentLinkingGeneratorConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration</span></code></a></p>
+<p>Configuration class for a Fragment Linking generator. Needed to create a generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exit_vector_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.ExitVectorsParams" title="iktos.makya.client.generator_configuration.filters.ExitVectorsParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitVectorsParams</span></code></a>]]) – Fragment exit vectors.
+Specify 2 exit vectors for the 2 fragments to be linked.
+To compute possible exit vectors, use the <a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.client.MakyaClient.get_possible_exit_vectors" title="iktos.makya.client.client.MakyaClient.get_possible_exit_vectors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_possible_exit_vectors()</span></code></a> method.
+To draw possible exit vectors, use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_molecule_with_exit_vectors()</span></code> function.</p></li>
+<li><p><strong>final_product_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.CompoundFilter" title="iktos.makya.client.generator_configuration.filters.CompoundFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompoundFilter</span></code></a>]]) – Filters on final generated molecules.</p></li>
+<li><p><strong>generator_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Set by default. Not user specified</p></li>
+<li><p><strong>additional_parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – Additional parameters for generator configuration.</p></li>
+<li><p><strong>datasets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>]]) – Datasets to be used as chemical space.
+Can be a single molecule.</p></li>
+<li><p><strong>predictors</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictor</span></code>]]) – Predictors (predictor sets’s objectives) to guide generation.</p></li>
+<li><p><strong>substructure_constraints</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructureConstraint</span></code>]]) – List of substructure constraints on the generated molecules.
+Set with the class <a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="iktos.makya.client.generator_configuration.filters.SubstructConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructConstraint</span></code></a>.</p></li>
+<li><p><strong>external_scorers</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaScorer</span></code></a>]]) – List of API configurations to score the generated molecules.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reference_smiles_1</span> <span class="o">=</span> <span class="s1">&#39;Nc1ncnc2[nH]cnc12&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reference_smiles_2</span> <span class="o">=</span> <span class="s1">&#39;Nc1ncnc2[nH]cnc12&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.ipython_console</span> <span class="kn">import</span> <span class="n">draw_molecule_with_exit_vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vectors_1</span> <span class="o">=</span> <span class="n">vectors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_possible_exit_vectors</span><span class="p">(</span><span class="n">reference_smiles_1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_molecule_with_exit_vectors</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">reference_smiles_1</span><span class="p">),</span> <span class="n">vectors_1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vectors_2</span> <span class="o">=</span> <span class="n">vectors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_possible_exit_vectors</span><span class="p">(</span><span class="n">reference_smiles_2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_molecule_with_exit_vectors</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">reference_smiles_2</span><span class="p">),</span> <span class="n">vectors_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">FragmentLinkingGeneratorConfiguration</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">ExitVectorsParams</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compounds_filters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;MolWt&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">600</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;TPSA&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.33</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">product_filters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;QED&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.7</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;NumAromaticRings&#39;</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compound_substruct_constraints</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;SUBSTRUCT_MATCH&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">smarts</span><span class="o">=</span><span class="s1">&#39;*~[#6]~[#6](=O)-[#8][H]&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exit_vector_1</span> <span class="o">=</span> <span class="n">ExitVectorsParams</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">smiles</span><span class="o">=</span><span class="n">reference_smiles_1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">exit_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">commercial_compound_filters</span><span class="o">=</span><span class="n">commercial_compounds_filters</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">commercial_compound_substruct_constraints</span><span class="o">=</span><span class="n">commercial_compound_substruct_constraints</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exit_vector_2</span> <span class="o">=</span> <span class="n">ExitVectorsParams</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">smiles</span><span class="o">=</span><span class="n">reference_smiles_2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">exit_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="n">FragmentLinkingGeneratorConfiguration</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">exit_vector_params</span><span class="o">=</span><span class="p">[</span><span class="n">exit_vector_1</span><span class="p">,</span> <span class="n">exit_vector_2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">final_product_filters</span><span class="o">=</span><span class="n">product_filters</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">create_generator</span><span class="p">(</span><span class="n">generator_name</span><span class="o">=</span><span class="s2">&quot;my-fragment-linking&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.generator_configuration.novelty_generator_configuration">
+<span id="novelty-generator-configuration-module"></span><h2>novelty_generator_configuration module<a class="headerlink" href="#module-iktos.makya.client.generator_configuration.novelty_generator_configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.novelty_generator_configuration.NoveltyGeneratorConfiguration">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">NoveltyGeneratorConfiguration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substructure_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_scorers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_molecule_smiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/novelty_generator_configuration.html#NoveltyGeneratorConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.novelty_generator_configuration.NoveltyGeneratorConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration" title="iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">iktos.makya.client.generator_configuration.generator_configuration.GeneratorConfiguration</span></code></a></p>
+<p>Configuration class for a Novelty generator. Needed to create a generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference_molecule_smiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – SMILES of the reference molecule from which patent hopping is performed.</p></li>
+<li><p><strong>generator_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Set by default. Not user specified</p></li>
+<li><p><strong>additional_parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>]) – Additional parameters for generator configuration.</p></li>
+<li><p><strong>datasets</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.dataset.MakyaDataset" title="iktos.makya.client.dataset.MakyaDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaDataset</span></code></a>]]) – Datasets to be used as chemical space.
+Can be a single molecule.</p></li>
+<li><p><strong>predictors</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaPredictor</span></code>]]) – Predictors (predictor sets’s objectives) to guide generation.</p></li>
+<li><p><strong>substructure_constraints</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructureConstraint</span></code>]]) – List of substructure constraints on the generated molecules.
+Set with the class <a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="iktos.makya.client.generator_configuration.filters.SubstructConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructConstraint</span></code></a>.</p></li>
+<li><p><strong>external_scorers</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.scorer.MakyaScorer" title="iktos.makya.client.scorer.MakyaScorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MakyaScorer</span></code></a>]]) – List of API configurations to score the generated molecules.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="n">NoveltyGeneratorConfiguration</span><span class="p">,</span> <span class="n">MatchSubstructureConstraint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">goals</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">MatchSubstructureConstraint</span><span class="p">(</span><span class="n">smarts</span><span class="o">=</span><span class="s2">&quot;CC&quot;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="n">NoveltyGeneratorConfiguration</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">reference_molecule_smiles</span><span class="o">=</span><span class="s1">&#39;Nc1ncnc2[nH]cnc12&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">substructure_constraints</span><span class="o">=</span><span class="n">goals</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generator</span> <span class="o">=</span> <span class="k">await</span> <span class="n">project</span><span class="o">.</span><span class="n">create_generator</span><span class="p">(</span><span class="n">generator_name</span><span class="o">=</span><span class="s2">&quot;my-novelty&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-iktos.makya.client.generator_configuration.filters">
+<span id="filters-module"></span><h2>filters module<a class="headerlink" href="#module-iktos.makya.client.generator_configuration.filters" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.filters.CompoundFilter">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">CompoundFilter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/filters.html#CompoundFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.filters.CompoundFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for filters on molecules or building blocks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filter_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code></a>[‘MolLogP’, ‘MolWt’, ‘ExactMolWt’, ‘NumAliphaticCarbocycles’, ‘NumAliphaticHeterocycles’, ‘NumAliphaticRings’, ‘NumAromaticCarbocycles’, ‘NumAromaticHeterocycles’, ‘NumAromaticRings’, ‘NumHAcceptors’, ‘NumHDonors’, ‘NumHeavyAtoms’, ‘NumHeteroAtoms’, ‘NumRings’, ‘NumRotatableBonds’, ‘NumSaturatedCarbocycles’, ‘NumSaturatedHeterocycles’, ‘NumSaturatedRings’, ‘NumSpiroAtoms’, ‘PFI’, ‘QED’, ‘TPSA’]) – Name of the filter to apply.</p></li>
+<li><p><strong>min</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – Minimum value.</p></li>
+<li><p><strong>max</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – Maximum value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="n">CompoundFilter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compounds_filters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;MolWt&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">600</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;TPSA&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.33</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.filters.ExitVectorsParams">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ExitVectorsParams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commercial_compound_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commercial_compound_substruct_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/filters.html#ExitVectorsParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.filters.ExitVectorsParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for exit vectors to specify on fragments (for the fragment growing and fragment linking generators).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – SMILES of the fragment.</p></li>
+<li><p><strong>exit_vector</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]]) – List of exit vectors to be used, identified by a number.
+To compute possible exit vectors, use the <a class="reference internal" href="iktos.makya.client.html#iktos.makya.client.client.MakyaClient.get_possible_exit_vectors" title="iktos.makya.client.client.MakyaClient.get_possible_exit_vectors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_possible_exit_vectors()</span></code></a> method.
+To draw possible exit vectors, use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_molecule_with_exit_vectors()</span></code> function.</p></li>
+<li><p><strong>commercial_compound_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.CompoundFilter" title="iktos.makya.client.generator_configuration.filters.CompoundFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompoundFilter</span></code></a>]]) – Filters on fragment.</p></li>
+<li><p><strong>commercial_compound_substruct_constraints</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="iktos.makya.client.generator_configuration.filters.SubstructConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubstructConstraint</span></code></a>]]) – list of substructure constraints on the building blocks used for growing/linking.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reference_smiles_1</span> <span class="o">=</span> <span class="s1">&#39;Nc1ncnc2[nH]cnc12&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.ipython_console</span> <span class="kn">import</span> <span class="n">draw_molecule_with_exit_vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vectors_1</span> <span class="o">=</span> <span class="n">vectors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_possible_exit_vectors</span><span class="p">(</span><span class="n">reference_smiles_1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_molecule_with_exit_vectors</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">reference_smiles_1</span><span class="p">),</span> <span class="n">vectors_1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">ExitVectorsParams</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compounds_filters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;MolWt&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">600</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">CompoundFilter</span><span class="p">(</span><span class="n">filter_name</span><span class="o">=</span><span class="s1">&#39;TPSA&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.33</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compound_substruct_constraints</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;SUBSTRUCT_MATCH&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">smarts</span><span class="o">=</span><span class="s1">&#39;*~[#6]~[#6](=O)-[#8][H]&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exit_vector_1</span> <span class="o">=</span> <span class="n">ExitVectorsParams</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">smiles</span><span class="o">=</span><span class="n">reference_smiles_1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">exit_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">commercial_compound_filters</span><span class="o">=</span><span class="n">commercial_compounds_filters</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">commercial_compound_substruct_constraints</span><span class="o">=</span><span class="n">commercial_compound_substruct_constraints</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt id="iktos.makya.client.generator_configuration.filters.SubstructConstraint">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">SubstructConstraint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smarts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/iktos/makya/client/generator_configuration/filters.html#SubstructConstraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#iktos.makya.client.generator_configuration.filters.SubstructConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for substructure constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smarts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – SMARTS of the substructure(s) that are required or forbidden.</p></li>
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code></a>[‘SUBSTRUCT_MATCH’, ‘SUBSTRUCT_UNMATCH’]) – Specify if the substructures are required (SUBSTRUCT_MATCH) or forbidden (SUBSTRUCT_UNMATCH).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)">None</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">iktos.makya.client.generator_configuration</span> <span class="kn">import</span> <span class="n">SubstructConstraint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">commercial_compound_substruct_constraints</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">SubstructConstraint</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;SUBSTRUCT_MATCH&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">smarts</span><span class="o">=</span><span class="s1">&#39;*~[#6]~[#6](=O)-[#8][H]&#39;</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="iktos.makya.client.html" class="btn btn-neutral float-left" title="iktos.makya.client package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

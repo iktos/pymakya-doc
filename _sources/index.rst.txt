@@ -1,0 +1,26 @@
+.. pyMakya client documentation master file, created by
+   sphinx-quickstart on Wed Aug 23 16:05:41 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to pyMakya client's documentation!
+==========================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Introduction:
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   iktos.makya.client
+   iktos.makya.client.generator_configuration
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
